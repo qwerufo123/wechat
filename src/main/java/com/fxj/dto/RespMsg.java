@@ -2,10 +2,12 @@ package com.fxj.dto;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import com.fxj.constant.WechatTokenConstant;
 
 import java.util.Date;
 
+@JacksonXmlRootElement(localName = "xml")
 public class RespMsg {
     protected String ToUserName;
     protected String FromUserName;

@@ -3,6 +3,7 @@ package com.fxj.dto;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import com.fxj.constant.WechatRespMsgTypeConstant;
 
 public class TextRespMsg extends RespMsg{

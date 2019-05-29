@@ -48,10 +48,10 @@ public class UserServiceImpl implements UserService {
         Byte sex = userInfo.getByte("sex");
         String headimgurl = userInfo.getString("headimgurl");
         User user = new User(openid, nickname, null, sex, headimgurl, WorkingState.OFF.getValue());
-        userMapper.insert(user);
+        userMapper.insertSelective(user);
         UserDatail userDatail = new UserDatail();
         userDatail.setOpenid(openid);
-        userDatailMapper.insert(userDatail);
+        userDatailMapper.insertSelective(userDatail);
         return new TextRespMsg(reqMsg, "恭喜\"" + nickname + "\"成为我公司一员，加油工作吧！");
     }
 

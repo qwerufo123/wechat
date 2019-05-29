@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 //@ComponentScan("com.fxj")
 @EnableFeignClients
-@MapperScan("com.fxj")
+@MapperScan("com.fxj.mapper")
 public class FxjApplication {
 
     public static void main(String[] args) {

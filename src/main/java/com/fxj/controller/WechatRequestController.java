@@ -2,7 +2,6 @@ package com.fxj.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.fxj.service.WechatRequestService;
-import org.aspectj.weaver.ast.Var;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
