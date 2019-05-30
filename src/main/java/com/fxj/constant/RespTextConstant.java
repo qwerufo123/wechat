@@ -10,7 +10,7 @@ public class RespTextConstant {
     public static final String NOSCOPE = "请前往公司范围内再打卡";
     public static final String CHECKIN = "打卡成功，祝新的一天工作愉快";
     public static final String CHECKOUT = "打卡成功，祝下班愉快";
-    public static final String SUBSCRIBE = "恭喜%s成为我公司一员，加油工作吧！";
+    public static final String SUBSCRIBE = "恭喜%s成为我公司一员，加油工作吧！\r\n您可以输入\"介绍\"获取介绍列表信息";
     public static final String UNSUBSCRIBE = "祝您日后发展更加蒸蒸日上";
 
     /**
