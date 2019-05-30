@@ -10,6 +10,17 @@ public class ImageRespMsg extends RespMsg{
     private Image image;
 
 
+    @Override
+    public String toString() {
+        return "ImageRespMsg{" +
+                "image=" + image +
+                ", ToUserName='" + ToUserName + '\'' +
+                ", FromUserName='" + FromUserName + '\'' +
+                ", CreateTime=" + CreateTime +
+                ", MsgType='" + MsgType + '\'' +
+                '}';
+    }
+
     public ImageRespMsg(JSONObject reqMsg, String mediaid) {
         super(reqMsg.getString("FromUserName"), WechatRespMsgTypeConstant.IMAGE);
         image = new Image(mediaid);

@@ -42,4 +42,14 @@ public class Article {
     public String getUrl() {
         return url;
     }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", picUrl='" + picUrl + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }

@@ -36,6 +36,7 @@ public class WechatRequestController {
 //            // TODO
 //        }
         object = wechatRequestService.handle(reqMsg);
+        System.out.println(object);
         return object;
     }
 

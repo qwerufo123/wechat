@@ -4,7 +4,7 @@ public class WechatTokenConstant {
     /**
      * token
      */
-    public static String accessToken = "22_8SN4G8rKaORFt7NpPTL27B4xQ-ufs7eD3IVewTM4IdO1zaNisWB26zM3l3YexgYrdyGB7N_LDce1b6dH2E45hPdBa7qbkDkrl03meRY1t8BamvcRf8IGtOLb5qkSMKeAAAWQO";
+    public static String accessToken = "22_0WF9ytaKG5pUq6zN5rnS7WjSxh-sLqR_WCMQO72_jtg_hffbVl_POCRhjx2KLb6sfNDYskFQaKsASs8sr3lR7xXKFzZp4EVSG-C5tjxmCtOvrU2vMLINcqhdQ3wPSDgACAYBM";
 
     /**
      * 开发者微信号

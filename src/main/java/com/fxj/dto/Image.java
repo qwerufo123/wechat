@@ -17,4 +17,11 @@ public class Image {
     public String getMediaid() {
         return mediaid;
     }
+
+    @Override
+    public String toString() {
+        return "Image{" +
+                "mediaid='" + mediaid + '\'' +
+                '}';
+    }
 }

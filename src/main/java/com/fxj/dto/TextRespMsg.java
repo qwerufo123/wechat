@@ -10,6 +10,17 @@ public class TextRespMsg extends RespMsg{
 
     private String text;
 
+    @Override
+    public String toString() {
+        return "TextRespMsg{" +
+                "text='" + text + '\'' +
+                ", ToUserName='" + ToUserName + '\'' +
+                ", FromUserName='" + FromUserName + '\'' +
+                ", CreateTime=" + CreateTime +
+                ", MsgType='" + MsgType + '\'' +
+                '}';
+    }
+
     public TextRespMsg(JSONObject reqMsg, String text) {
         super(reqMsg.getString("FromUserName"), WechatRespMsgTypeConstant.TEXT);
         this.text = text;

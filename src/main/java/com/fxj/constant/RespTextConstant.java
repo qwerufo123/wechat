@@ -10,7 +10,7 @@ public class RespTextConstant {
     public static final String NOSCOPE = "请前往公司范围内再打卡";
     public static final String CHECKIN = "打卡成功，祝新的一天工作愉快";
     public static final String CHECKOUT = "打卡成功，祝下班愉快";
-    public static final String SUBSCRIBE = "恭喜%f成为我公司一员，加油工作吧！";
+    public static final String SUBSCRIBE = "恭喜%s成为我公司一员，加油工作吧！";
     public static final String UNSUBSCRIBE = "祝您日后发展更加蒸蒸日上";
 
     /**
@@ -53,14 +53,14 @@ public class RespTextConstant {
             while ((s = fileReader.readLine())!=null){
                 stringBuffer.append(s + "\r\n");
             }
-            FIRSTLIST = stringBuffer.toString();
+            TECHNIQUE = stringBuffer.toString();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static final String ERMEDIAID = "";
-    public static final String FLOWCHARTMEDIAID = "";
+    public static final String ERMEDIAID = "8l8Mt4EMh4rT7zJ5wbQEFCeN-uqYU4gBkOmRuwyB1Ak";
+    public static final String FLOWCHARTMEDIAID = "8l8Mt4EMh4rT7zJ5wbQEFOt_7o3PyL7y7HvaUFUF3O4";
 
     public static final String APIURL = "https://docs.qq.com/doc/DZUxpdlZUWVB2Y3ds";
     public static final String DEPLOYURL = "https://docs.qq.com/doc/DZW9OQlRKRnlEWnpp";

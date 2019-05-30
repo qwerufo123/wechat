@@ -14,7 +14,18 @@ public class NewsRespMsg extends RespMsg{
     private Integer articleCount;
     private List<Article> articles;
 
-    public NewsRespMsg(JSONObject reqMsg,List<Article> list) {
+    @Override
+    public String toString() {
+        return "NewsRespMsg{" +
+                "articles=" + articles +
+                ", ToUserName='" + ToUserName + '\'' +
+                ", FromUserName='" + FromUserName + '\'' +
+                ", CreateTime=" + CreateTime +
+                ", MsgType='" + MsgType + '\'' +
+                '}';
+    }
+
+    public NewsRespMsg(JSONObject reqMsg, List<Article> list) {
         super(reqMsg.getString("FromUserName"), WechatRespMsgTypeConstant.NEWS);
         articles = list;
         articleCount = list.size();

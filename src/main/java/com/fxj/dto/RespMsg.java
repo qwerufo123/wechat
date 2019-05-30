@@ -10,9 +10,19 @@ import java.util.Date;
 @JacksonXmlRootElement(localName = "xml")
 public class RespMsg {
     protected String ToUserName;
-    protected String FromUserName;
+    protected String FromUserName = WechatTokenConstant.exploitID;
     protected Long CreateTime;
     protected String MsgType;
+
+    @Override
+    public String toString() {
+        return "RespMsg{" +
+                "ToUserName='" + ToUserName + '\'' +
+                ", FromUserName='" + FromUserName + '\'' +
+                ", CreateTime=" + CreateTime +
+                ", MsgType='" + MsgType + '\'' +
+                '}';
+    }
 
     public RespMsg(String toUserName, String msgType) {
         ToUserName = toUserName;
