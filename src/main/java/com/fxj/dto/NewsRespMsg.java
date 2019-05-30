@@ -2,6 +2,7 @@ package com.fxj.dto;
 
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fxj.constant.WechatRespMsgTypeConstant;
 
@@ -13,17 +14,6 @@ public class NewsRespMsg extends RespMsg{
 
     private Integer articleCount;
     private List<Article> articles;
-
-    @Override
-    public String toString() {
-        return "NewsRespMsg{" +
-                "articles=" + articles +
-                ", ToUserName='" + ToUserName + '\'' +
-                ", FromUserName='" + FromUserName + '\'' +
-                ", CreateTime=" + CreateTime +
-                ", MsgType='" + MsgType + '\'' +
-                '}';
-    }
 
     public NewsRespMsg(JSONObject reqMsg, List<Article> list) {
         super(reqMsg.getString("FromUserName"), WechatRespMsgTypeConstant.NEWS);
@@ -38,10 +28,23 @@ public class NewsRespMsg extends RespMsg{
         return articleCount;
     }
 
-    @JacksonXmlProperty(localName = "Articles")
+    @JacksonXmlElementWrapper(localName = "Articles")
+    @JacksonXmlProperty(localName = "item")
     @JacksonXmlCData
     public List<Article> getArticles() {
         return articles;
     }
+
+    @Override
+    public String toString() {
+        return "NewsRespMsg{" +
+                "articles=" + articles +
+                ", ToUserName='" + ToUserName + '\'' +
+                ", FromUserName='" + FromUserName + '\'' +
+                ", CreateTime=" + CreateTime +
+                ", MsgType='" + MsgType + '\'' +
+                '}';
+    }
+
 
 }

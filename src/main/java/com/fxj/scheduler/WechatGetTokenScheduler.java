@@ -29,7 +29,7 @@ public class WechatGetTokenScheduler {
     /**
      * 定时刷新token
      */
-//    @Scheduled(fixedRate = 90 * 60 * 1000)
+    @Scheduled(fixedRate = 90 * 60 * 1000)
     private void gettoken(){
             JSONObject accessToken = wechatApi.getAccessToken(granttype, appID, appsecret);
             String access_token = accessToken.getString("access_token");
