@@ -18,7 +18,7 @@ public class WechatReqMsgTypeConstant {
      */
     public static final String VOICE = "voice";
     /**
-     * 语音消息信息
+     * 视屏消息信息
      */
     public static final String VIDEO = "video";
     /**

@@ -11,11 +11,10 @@ public class CheckRecord {
 
     private Date time;
 
-    public CheckRecord(Integer id, String openid, Byte type, Date time) {
-        this.id = id;
+    public CheckRecord( String openid, Byte type) {
         this.openid = openid;
         this.type = type;
-        this.time = time;
+        this.time = new Date();
     }
 
     public CheckRecord() {

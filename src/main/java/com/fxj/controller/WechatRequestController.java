@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,7 +24,7 @@ public class WechatRequestController {
 //    @Value("${isexploit}")
 //    private boolean isexploit;
 
-    @PostMapping("/incident")
+    @PostMapping(value = "/incident",produces = { MediaType.APPLICATION_XML_VALUE, MediaType.TEXT_PLAIN_VALUE })
     private Object incident(String signature,
                             Integer timestamp,
                             String nonce,

@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.fxj.api.WechatApi;
 import com.fxj.component.UserLocation;
+import com.fxj.constant.RespTextConstant;
 import com.fxj.constant.WechatLongConstant;
 import com.fxj.constant.WechatTokenConstant;
 import com.fxj.constant.WorkingState;
@@ -52,7 +53,7 @@ public class UserServiceImpl implements UserService {
         UserDatail userDatail = new UserDatail();
         userDatail.setOpenid(openid);
         userDatailMapper.insertSelective(userDatail);
-        return new TextRespMsg(reqMsg, "恭喜\"" + nickname + "\"成为我公司一员，加油工作吧！");
+        return new TextRespMsg(reqMsg, String.format(RespTextConstant.SUBSCRIBE,nickname));
     }
 
     @Transactional
@@ -61,7 +62,7 @@ public class UserServiceImpl implements UserService {
         String openid = reqMsg.getString("FromUserName");
         userMapper.deleteByPrimaryKey(openid);
         userDatailMapper.deleteByPrimaryKey(openid);
-        return new TextRespMsg(reqMsg, "祝您日后发展更加蒸蒸日上");
+        return new TextRespMsg(reqMsg, RespTextConstant.UNSUBSCRIBE);
     }
 
     @Override
