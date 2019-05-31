@@ -182,13 +182,13 @@ public class WechatRequestServiceImpl implements WechatRequestService {
             case WechatEventKeyConstant.API:
                 logger.info("receive {}", WechatEventKeyConstant.API);
                 list = new ArrayList<>();
-                article = new Article("", "点击前往", "", RespTextConstant.APIURL);
+                article = new Article("", "API文档", "", RespTextConstant.APIURL);
                 list.add(article);
                 return new NewsRespMsg(reqMsg,list);
             case WechatEventKeyConstant.DEPLOY:
                 logger.info("receive {}", WechatEventKeyConstant.DEPLOY);
                 list = new ArrayList<>();
-                article = new Article("", "点击前往", "", RespTextConstant.DEPLOYURL);
+                article = new Article("", "部署文档", "", RespTextConstant.DEPLOYURL);
                 list.add(article);
                 return new NewsRespMsg(reqMsg,list);
             default:
