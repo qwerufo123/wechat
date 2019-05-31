@@ -220,6 +220,9 @@ public class WechatRequestServiceImpl implements WechatRequestService {
         if (distance > this.distance) {
             return new TextRespMsg(reqMsg,RespTextConstant.NOSCOPE);
         }
+        if (user.getStatus() == WorkingState.WORK.getValue()){
+            return  new TextRespMsg(reqMsg,RespTextConstant.REPETITIONCLICK);
+        }
         checkRecordMapper.insert(new CheckRecord(reqMsg.getString("FromUserName"), WorkingState.WORK.getValue()));
         user.setStatus(WorkingState.WORK.getValue());
         userMapper.updateByPrimaryKeySelective(user);
@@ -244,6 +247,9 @@ public class WechatRequestServiceImpl implements WechatRequestService {
         }
         if (distance > this.distance) {
             return new TextRespMsg(reqMsg,RespTextConstant.NOSCOPE);
+        }
+        if (user.getStatus() == WorkingState.OFF.getValue()){
+            return  new TextRespMsg(reqMsg,RespTextConstant.REPETITIONCLICK);
         }
         checkRecordMapper.insert(new CheckRecord(reqMsg.getString("FromUserName"), WorkingState.OFF.getValue()));
         user.setStatus(WorkingState.OFF.getValue());

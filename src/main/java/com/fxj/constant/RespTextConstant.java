@@ -13,6 +13,8 @@ public class RespTextConstant {
     public static final String CHECKOUT = "打卡成功，祝下班愉快";
     public static final String SUBSCRIBE = "恭喜%s成为我公司一员，加油工作吧！\r\n您可以输入\"介绍\"获取介绍列表信息";
     public static final String UNSUBSCRIBE = "祝您日后发展更加蒸蒸日上";
+    public static final String REPETITIONCLICK = "请勿重复打卡";
+
 
     /**
      * 详细列表
