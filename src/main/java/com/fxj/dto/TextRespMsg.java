@@ -27,7 +27,7 @@ public class TextRespMsg extends RespMsg{
     }
 
 
-    @JacksonXmlProperty(localName = "text")
+    @JacksonXmlProperty(localName = "Content")
     @JacksonXmlCData
     public String getText() {
         return text;
