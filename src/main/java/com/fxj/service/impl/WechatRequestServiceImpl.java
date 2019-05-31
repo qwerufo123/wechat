@@ -236,8 +236,11 @@ public class WechatRequestServiceImpl implements WechatRequestService {
     private Object checkout(JSONObject reqMsg) {
         double distance = addressToJudge(reqMsg);
         User user = userMapper.selectByPrimaryKey(reqMsg.getString("FromUserName"));
-        if (distance < 0){
+        if (distance==-1){
             return new TextRespMsg(reqMsg, RespTextConstant.NOADDRESS);
+        }
+        if (distance==-2){
+            return new TextRespMsg(reqMsg, RespTextConstant.PASTDUE);
         }
         if (distance > this.distance) {
             return new TextRespMsg(reqMsg,RespTextConstant.NOSCOPE);
@@ -251,8 +254,11 @@ public class WechatRequestServiceImpl implements WechatRequestService {
     private double addressToJudge(JSONObject reqMsg) {
         String openid = reqMsg.getString("FromUserName");
         Location location = userLocation.get(openid);
-        if (location==null && new Date().getTime() - location.getTime().getTime() < 1000*60*10 ){
+        if (location==null){
             return -1;
+        }
+        if (new Date().getTime()-location.getTime().getTime()>1000*60*10){
+            return -2;
         }
 //        Coordinate lat = Coordinate.fromDegrees(latiude);
 //        Coordinate lng = Coordinate.fromDegrees(longitude);

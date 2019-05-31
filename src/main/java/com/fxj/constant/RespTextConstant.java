@@ -6,7 +6,8 @@ import java.io.*;
 
 public class RespTextConstant {
 
-    public static final String NOADDRESS = "未获取位置";
+    public static final String NOADDRESS = "未获取位置，请打开定位服务";
+    public static final String PASTDUE = "位置已过期请开定位服务重新上报位置";
     public static final String NOSCOPE = "请前往公司范围内再打卡";
     public static final String CHECKIN = "打卡成功，祝新的一天工作愉快";
     public static final String CHECKOUT = "打卡成功，祝下班愉快";
